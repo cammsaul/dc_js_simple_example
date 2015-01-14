@@ -12,11 +12,35 @@
   <body>
     <h1>dc.js Simple Pie Chart Example</h1>
 
-    <div id="chart"></div>
+    <div id="chart">
+      <!-- Anything you put inside the div will go above the chart -->
+      <h1>Simple Pie Chart</h1>
 
+      <!-- If a link with CSS class 'reset' is present then the chart will automatically turn it on or off based on whether there is a filter set on this
+	   chart (slice selection for pie chart and brush selection for bar chart).
+	   Enable this with chart.TurnOnControls(true)
+      -->
+      <a class="reset" href="javascript:pieChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+
+      <!-- dc.js will also automatically inject applied current filter value into any html element with CSS class 'filter' -->
+      <div style="border: 1px solid red;">
+	<h3>Selected Values:</h3>
+	<div class="filter"></div>
+      </div>
+    </div>
+
+    <!-- D3.JS -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+
+    <!-- CROSSFILTER
+	 "Library for exploring large multivariate datasets in the browser.
+	 Supports extremely fast interaction with coordinated views." -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.11/crossfilter.min.js"></script>
+
+    <!-- DC.JS -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/dc/2.0.0-beta.1/dc.min.js"></script>
+
+    <!-- Local JS - Pie chart example -->
     <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
